@@ -1,0 +1,547 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" schoolarea="1">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-33QC91PQ1H" crossorigin="anonymous"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-33QC91PQ1H');
+        </script>
+        <meta http-equiv="content-language" content="zh-TW">
+        <meta charset="UTF-8">    
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="renderer" content="webkit">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">        
+        <meta name="format-detection" content="telephone=no">    
+        <meta name="viewport" content="user-scalable=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"> 
+        
+        <meta name="description"  content="" />
+
+        <title>國立臺灣大學 - 體育室場地租借管理系統</title>
+
+        
+        
+        <link rel="stylesheet" media="all" type="text/css" href="https://rent.pe.ntu.edu.tw/_/c/df.php?1793276427" />
+        
+        
+			<link rel="stylesheet" type="text/css" href="/__/c/Basic.php?1793276427" />
+			<link rel="stylesheet" type="text/css" href="/__/c/Main.php?1793276427" />
+			<link rel="stylesheet" type="text/css" href="/__/c/Home.php?1793276427" />
+			<link rel="stylesheet" type="text/css" href="/__/c/FlowPeople.css?1793276427" />
+
+			<link rel="apple-touch-icon" sizes="180x180" href="/__/i/favicons/apple-touch-icon.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="/__/i/favicons/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="/__/i/favicons/favicon-16x16.png">
+			<link rel="mask-icon" href="/__/i/favicons/safari-pinned-tab.svg" color="#5bbad5">
+
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+			
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://rent.pe.ntu.edu.tw/__/j/Tool.php?1793276427"></script>
+        <script src="https://rent.pe.ntu.edu.tw/__/j/df.php?1793276427"></script>
+    </head>
+    <body>
+
+        <div id="Main" class="">
+	<noscript style="position: fixed; top: 0px; z-index: 1000;"><p style="background-color: #bd7a00;">『您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態』</p></noscript>
+	<div id="TMain">	<a href="#Accesskey_U" id="Accesskey_U" accesskey="U" title="上方選單連結區，此區塊列有本網站的主要連結">:::</a>
+	<div class="TMLeft">
+		<div class="TMLLogo"><a href="/" title="回首頁"><img src="/__/i/Logo.png" alt="國立臺灣大學 Logo" /></a></div>
+		<div class="TMLTitle">
+			<div class="C"><img src="/__/i/LogoTitle.png" class="logoTitle" alt="國立臺灣大學 National Taiwan University" /> <img src="/__/i/LogoSubTitle.png" class="logoSubTitle" alt="國立臺灣大學場地租借系統" /></div>
+		</div>
+	</div>
+	<div class="TMMobile">
+		<div class="TMMFun"><i class="material-icons" onclick="ChangeMenu();">menu</i></div>
+	</div>
+	<div class="TMRight">
+		<ul class="Top">
+			<li><a href="#Accesskey_C" id="gotocenter" title="跳到主要內容" tabindex="1" class="sr-only sr-only-focusable">跳到主要內容</a></li>
+			
+	<li><a href="/member/?U=login" title="會員登入">會員登入</a></li>
+	
+			<li class="Line"><div></div></li>
+			<li><a href="/sitemap/" title="網站導覽">網站導覽</a></li>
+			<li class="Line"><div></div></li>
+			<li><a href="/?L=EN" class="EN">English</a></li>
+		</ul>
+		<ul class="Bottom">
+			<li class="MenuLi"><a href="/venues/" title="租借場地">租借場地</a></li><li class="MenuLi"><a href="/locker/" title="租借置物櫃">租借置物櫃</a></li><li class="MenuLi"><a href="/ticket/" title="回數票">回數票</a></li><li class="MenuLi"><a href="/passes/" title="個人票證">個人票證</a></li><li class="MenuLi"><a href="/guide/" title="運動指導">運動指導</a></li><li class="MenuLi"><a href="/map/" title="場地地圖">場地地圖</a></li><li class="MenuLi"><a href="/panorama/" title="環景導覽">環景導覽</a></li><li class="MenuLi"><a href="/news/" title="新訊公告">新訊公告</a></li><li class="MenuLi"><a href="/document/" title="文件專區">文件專區</a></li>
+		</ul>
+	</div>
+	<div class="MenuBg"><div class="Bg"></div></div>
+	<script>
+		function ChangeMenu() {
+			var TMainObj = document.getElementById( 'TMain' );
+			TMainObj.classList.toggle( 'Open' );
+		}
+
+		var OpenQuestionnaire = '0';
+
+		function OpenQuestionnaireFun() {
+			QuestionnaireLinghtbox = LightboxWindow( '', 600, 550 );
+			QuestionnaireLinghtbox.classList.add( 'Questionnaire' );
+			ResizeFunAry.push( SetObjLightboxWHFun );
+			window.setTimeout( function() {
+				document.getElementById( 'overlayId' ).style.height = document.getElementById( 'Main' ).offsetHeight+'px';
+			}, 500);
+		}
+
+		if( OpenQuestionnaire > 0 ) {
+			LoadFunAry.push( OpenQuestionnaireFun );
+		}
+		
+	// 取得所有主選單項目
+	var menuItems = document.querySelectorAll('.MenuLi');
+
+	menuItems.forEach(item => {
+	item.addEventListener('mouseenter', () => {
+		item.classList.add('Show');  // 顯示子選單
+	});
+
+	// 當滑鼠移出主選單或子選單時隱藏
+	item.addEventListener('mouseleave', () => {
+		item.classList.remove('Show');
+	});
+	});
+
+	</script>
+	<style>
+	#lightboxId.Questionnaire {	
+		border: none;
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: 0px 10px 15px rgb(0 0 0 / 39%);
+		background-color: transparent;
+	}
+	</style>
+	</div>
+	<div id="CMain" class="TW">
+		<a href="#Accesskey_C" id="Accesskey_C" accesskey="C" title="中間主要內容區，此區塊呈現網頁的網頁內容">:::</a>
+		<style>
+	/* 無跑馬燈 style */
+	#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain { position: relative; overflow: hidden; width: 100%; height: 31.2vw; }
+	#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Image { background-position: top center; background-repeat: no-repeat; background-size: 100% auto; width: 100%; height: 100%; }
+	#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Title {
+		position: absolute;
+		left: calc(25% - 8.68vw);
+		bottom: 5.2vw;
+		font-size: 45px;
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0.6);
+		padding: 15px 30px;
+		border-radius: 8px;
+		box-shadow: 0px 5px 5px rgb(0 0 0 / 20%);
+		text-shadow: 0px 3px 5px rgb(0 0 0 / 30%);
+		letter-spacing: 4px;
+	}
+
+	@media screen and (max-width: 1700px) {
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Title {
+			left: calc(25% - 12.68vw);
+			bottom: 5.2vw;
+		}
+	}
+
+	@media screen and (max-width: 1440px) {
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Title {
+			left: calc(25% - 19.68vw);
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Title {
+			font-size: 30px;
+		}
+	}	
+
+	@media screen and (max-width: 900px) {
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Title {
+			font-size: 25px;
+		}
+	}
+
+	@media screen and ( max-width: 800px ) {
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain { position: relative; overflow: hidden; height: 32vw; }
+	}
+
+	@media screen and (max-width: 768px) {
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Title {
+			left: 0px;
+			margin: 0px 25px;
+			width: calc(100% - 50px);
+			font-size: 20px;
+			text-align: left;
+		}
+	}
+
+	@media screen and (max-width: 690px) {
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain { height: 250px; }
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Image {
+			background-size: auto 100%;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Title {
+			margin: 0px 15px;
+			width: calc(100% - 30px);
+			padding: 10px 15px;
+			font-size: 18px;
+			letter-spacing: 0px;
+		}
+	}
+
+	@media screen and (max-width: 414px) {
+		#CMain .CMMarquee .CMContent #HomeMarquee .ImageMain .Image {
+			background-position: top left 37%;
+		}
+	}
+
+
+</style>
+<div class="CMMarquee">
+	<div class="CMContent">
+		<h1 id="HomeMarquee">
+			<div id="HomeMarqueeMain" class="ImageMain">
+				<div class="Image" style="background-image: url( '/__/i/Marquee_1.jpg' );"></div>
+				<div class="Title">臺灣大學綜合體育館</div>
+			</div>
+		</h1>
+		<!-- h1 id="HomeMarquee">
+			<div class="BtnLeft"><span class="material-icons">chevron_left</span></div>
+			<div class="BtnRight"><span class="material-icons">chevron_right</span></div>
+			<div id="HomeMarqueeMain" class="ImageMain">
+	<div class="Item" style="background-image: url( '/__/i/Marquee_1.jpg' );">
+		<div class="ICM ICM1">臺灣大學綜合體育館</div>
+	</div></div>
+		</h1 -->
+		<!-- div id="MarqueePointer"><ul class="Pointer"><li class="Current"></li></ul></div -->
+		<div class="HomeMarqueeImage" style="background-image: url( '/__/i/MarqueeBg.png' );"></div>
+	</div>
+</div><div class="CM_New_Rent">
+	<div class="CMNRContent">
+		<style>
+	.CMNRContent { align-items: flex-start; }
+	#CMain .CMNews.MarathonEvent { margin: 40px auto 0px; }
+	.MarathonEventBanner { display: none; position: relative; align-items: center; justify-content: space-between; gap: 12px; overflow: hidden; margin: 0 0 15px; flex: 0 0 100%; width: 100%; padding: 10px 16px; border-radius: 8px; background: linear-gradient( 135deg, #00444c, #0f7088 ); color: #eaf6f8; text-decoration: none; box-sizing: border-box; }
+	.MarathonEventBanner > * { position: relative; z-index: 1; }
+	.MarathonEventBanner::after { content: ""; position: absolute; z-index: 0; top: 0; right: 0; bottom: 0; width: 300px; max-width: 58%; background-image: url( "/__/i/marathon/a.png" ), url( "/__/i/marathon/b.png" ); background-repeat: no-repeat; background-position: right bottom -14px, right 60px bottom; background-size: auto 150%, auto 110%; opacity: .16; pointer-events: none; }
+	.MarathonEventBanner .Text { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; }
+	.MarathonEventBanner .Name { font-size: 18px; font-weight: 600; line-height: 1.4; color: #FFFFFF; }
+	.MarathonEventBanner .When { font-size: 14px; color: #cdeaee; }
+	.MarathonEventBanner .Go { flex: none; padding: 5px 14px; border-radius: 6px; background: #FFFFFF; color: #00444c; font-size: 14px; font-weight: 700; white-space: nowrap; }
+	.MarathonEventBanner:hover .Go { background: #dbebed; }
+
+	#CMain .CMNews.MarathonEvent .MarathonEventBanner { display: flex; }
+
+	@media screen and ( max-width: 1024px ) {
+		.MarathonEventBanner { display: flex; order: 1; margin: 20px 0 -10px; }
+
+		#CMain .CMNews.MarathonEvent {  }
+		#CMain .CMNews.MarathonEvent .MarathonEventBanner { display: none; }
+		.CMNRContent { flex-wrap: wrap; }
+	}
+
+	@media screen and ( max-width: 600px ) {
+		.MarathonEventBanner .Name { font-size: 16px; }
+		.MarathonEventBanner .When { font-size: 13px; }
+	}
+</style>
+
+<div class="CMNews ">
+	
+	<div class="CMContent">
+		<div class="CMCTitle">
+			<div class="Title Name">新訊與公告</div>
+			<div class="Line"></div>
+		</div>
+		<div class="CMCList">
+		<a href="/news/?K=164" title="115年11月份營業公告(綜合體育館)" class="Item">
+			<div class="T">115年11月份營業公告(綜合體育館)</div>
+			<div class="A">校本部</div>
+			<div class="D">2026/10/29</div>
+		</a>
+		<a href="/news/?K=163" title="115/10/23-10/24（星期五、六）因薔琵颱風來襲，臺大綜合體育館閉館不開放。" class="Item">
+			<div class="T">115/10/23-10/24（星期五、六）因薔琵颱風來襲，臺大綜合體育館閉館不開放。</div>
+			<div class="A">校本部</div>
+			<div class="D">2026/10/22</div>
+		</a>
+		<a href="/news/?K=161" title="配合10月國定假日及補假日戶外游泳池休館公告" class="Item">
+			<div class="T">配合10月國定假日及補假日戶外游泳池休館公告</div>
+			<div class="A">校本部</div>
+			<div class="D">2026/09/30</div>
+		</a>
+		<a href="/news/?K=160" title="(更新)健身中心9/29開放公告" class="Item">
+			<div class="T">(更新)健身中心9/29開放公告</div>
+			<div class="A">校本部</div>
+			<div class="D">2026/09/14</div>
+		</a>
+		<a href="/news/?K=156" title="校內單位借用戶外運動場地辦理集會、表演及競賽等活動，自115年8月1日起酌收場地清潔費等公告。" class="Item">
+			<div class="T">校內單位借用戶外運動場地辦理集會、表演及競賽等活動，自115年8月1日起酌收場地清潔費等公告。</div>
+			<div class="A">校本部</div>
+			<div class="D">2026/07/03</div>
+		</a>
+		<a href="/news/?K=123" title="室外游泳池個人使用證及自助機於114/1/7正式上線" class="Item">
+			<div class="T">室外游泳池個人使用證及自助機於114/1/7正式上線</div>
+			<div class="A">校本部</div>
+			<div class="D">2025/01/07</div>
+		</a>
+		<a href="/news/?K=122" title="網球場個人使用證於114/1/7正式上線" class="Item">
+			<div class="T">網球場個人使用證於114/1/7正式上線</div>
+			<div class="A">校本部</div>
+			<div class="D">2025/01/07</div>
+		</a></div>
+		<div class="CMCMore"><a href="/news/" title="更多新訊公告">更多新訊公告</a></div>
+	</div>
+</div>
+		<div class="CMSearch">
+			<div class="CMContent">
+				<div class="CMM">
+					<ul class="SMenu">
+						<li><div><span class="material-icons">flash_on</span>租借捷徑</div></li>
+					</ul>
+					<ul class="RSMenu"></ul>
+				</div>
+				<div class="CMI VS Open">
+					<div class="RentBtnDiv">
+	<div class="RentShortcut ARentVenues">
+		<div class="Title">常租場地</div>
+		<div class="Content">
+		<a href="/order/?Add=A:2" title="多功能球場 ( 羽球 )" style="background-image: url( '/__/i/Badminton.png' );">多功能球場 <span>( 羽球 )</span></a><a href="/order/?Add=A:4" title="桌球室 ( 桌球 )" style="background-image: url( '/__/i/Table Tennis.png' );">桌球室 <span>( 桌球 )</span></a><a href="/order/?Add=A:11" title="壁球室 ( 壁球 )" style="background-image: url( '/__/i/Racquetball.png' );">壁球室 <span>( 壁球 )</span></a><a href="/order/?Add=A:86" title="三樓主球場 ( 羽球三 )" style="background-image: url( '/__/i/Badminton.png' );">三樓主球場 <span>( 羽球三 )</span></a><a href="/order/?Add=A:97" title="教室 B109 ( 桌球 )" style="background-image: url( '/__/i/Table Tennis.png' );">教室 B109 <span>( 桌球 )</span></a>
+		</div>
+	</div>
+	<div class="RentShortcut TicketVenues">
+		<div class="Title">場地回數票</div>
+		<div class="Content">
+		<a href="/ticket/?V=93" title="健身中心">健身中心</a><a href="/ticket/?V=105" title="游泳池">游泳池</a>
+		</div>
+		<div class="VenuesFlowPeople">
+			<a href="javascript:void(0);" role="button" onclick="GoVenuesFlowPeople();" title="場地人流">場地人流</a>
+		</div>
+	</div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+function GoVenuesFlowPeople() {
+	var TV = $(".CMFlowPeople").offset().top - 80 ;
+	$([document.documentElement, document.body]).animate({
+		scrollTop: TV
+	}, 300);
+}
+</script><div class="CMInfo">
+	<div class="CMContent">
+		<div class="CMCTitle">
+			<div class="Title Name">場地租用說明文件</div>
+			<div class="Line"></div>
+		</div>
+		<div class="CMCList">
+			
+		<a href="/document/?K=1" class="Item" title="國立臺灣大學校總區運動場館管理辦法實施細則">
+			<div class="I" style="background-image: url( '/udf/1659576576008187200_400x264.png' );"></div>
+			<div class="C">
+				<div class="D">2026/04/30</div>
+				<div class="T">國立臺灣大學校總區運動場館管理辦法實施細則</div>
+			</div>
+		</a>
+		
+		<a href="/document/?K=14" class="Item" title="單一場地租借相關文件">
+			<div class="I" style="background-image: url( '/__/i/DfDocument.png' );"></div>
+			<div class="C">
+				<div class="D">2025/07/18</div>
+				<div class="T">單一場地租借相關文件</div>
+			</div>
+		</a>
+		
+		<a href="/document/?K=20" class="Item" title="大型活動場地租借相關文件">
+			<div class="I" style="background-image: url( '/__/i/DfDocument.png' );"></div>
+			<div class="C">
+				<div class="D">2025/05/21</div>
+				<div class="T">大型活動場地租借相關文件</div>
+			</div>
+		</a>
+		
+			<!-- a href="" class="Item">
+				<div class="I" style="background-image: url( '/__/i/Info_1.png' );"></div>
+				<div class="C">
+					<div class="D">2021/05/21</div>
+					<div class="T">國立臺灣大學校總區運動場館管理辦法實施細則</div>
+				</div>
+			</a>
+			<a href="/map/" class="Item">
+				<div class="I" style="background-image: url( '/__/i/Info_2.png' );"></div>
+				<div class="C">
+					<div class="D">2021/05/12</div>
+					<div class="T">校總區運動場館與戶外場地平面示意圖</div>
+				</div>
+			</a>
+			<a href="" class="Item">
+				<div class="I" style="background-image: url( '/__/i/Info_3.png' );"></div>
+				<div class="C">
+					<div class="D">2021/05/03</div>
+					<div class="T">國立臺灣大學噪音污染管制管理要點</div>
+				</div>
+			</a -->
+		</div>
+	</div>
+</div><div class="CMFlowPeople">
+	<div class="CMContent_FlowPeople">
+		<div class="CMCList">
+			
+        <div class="CMCItem">
+            <div class="IT">&nbsp;健身中心</div>
+            <div class="IC">
+                <div class="ICI"><span>39</span> 現在人數 </div>
+                <div class="ICI"><span>80</span> 最適人數 </div>
+                <div class="ICI"><span>161</span> 最大乘載人數 </div>
+            </div>
+        </div>
+        <div class="CMCItem">
+            <div class="IT">&nbsp;室內游泳池</div>
+            <div class="IC">
+                <div class="ICI"><span>33</span> 現在人數 </div>
+                <div class="ICI"><span>50</span> 最適人數 </div>
+                <div class="ICI"><span>130</span> 最大乘載人數 </div>
+            </div>
+        </div>
+		</div>
+        <div class="CMCUpTime">最後更新時間 2026-10-29 20:20</div>
+	</div>
+</div><div class="CMAdvantage">
+	<div class="CMContent">
+		<div class="CMCList L1">
+			<div class="Item">
+				<div class="I"><span class="material-icons">emoji_emotions</span></div>
+				<div class="T">會員專屬</div>
+				<div class="C">如果您第一次使用系統<br />請先至會員專區，選擇適合您的類別加入會員<br />我們將提供更全面的服務</div>
+			</div>
+			<div class="Item">
+				<div class="I"><span class="material-icons">system_security_update_good</span></div>
+				<div class="T">數位會員卡</div>
+				<div class="C">全新推出數位會員卡<br />內建加密QRCODE，輕輕一掃<br />加速服務流程</div>
+			</div>
+			<div class="Item">
+				<div class="I"><span class="material-icons">important_devices</span></div>
+				<div class="T">全新介面</div>
+				<div class="C">全新的場地租借介面<br />更直覺的時段選擇方式，費用立即計算<br />手機也能租借立刻完成</div>
+			</div>
+		</div>
+		<div class="CMCList L2">
+			<div class="Item">
+				<div class="I"><span class="material-icons">touch_app</span></div>
+				<div class="T">現場自助購票</div>
+				<div class="C">體育館新增現場自助購票服務<br />空閒時段輕鬆點選<br />掃描數位會員卡，計價優惠正確</div>
+			</div>
+			<div class="Item">
+				<div class="I"><span class="material-icons">receipt_long</span></div>
+				<div class="T">電子收據</div>
+				<div class="C">收據永久保存在會員專區<br />隨時可查，使用更方便<br />無紙環保愛地球</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</div>
+	<div id="BMain"><div class="BMContent">
+	<div class="BMRight Menu TopMenuList">
+		<ul><li><a href="/member/" title="會員專區">會員專區</a></li><li><a href="/sitemap/" title="網站導覽">網站導覽</a></li><li><a href="https://forms.gle/GWMhRSMSHpD2LSmf9" target="_blank" rel="noopener noreferrer" title="意見回饋(另開新視窗)">意見回饋</a></li></ul>
+	</div>
+	<div class="BMRight Menu MenuList">
+		<ul><li class=""><a href="/venues/" title="租借場地">租借場地</a></li><li class=""><a href="/locker/" title="租借置物櫃">租借置物櫃</a></li><li class=""><a href="/ticket/" title="回數票">回數票</a></li><li class=""><a href="/passes/" title="個人票證">個人票證</a></li><li class=""><a href="/guide/" title="運動指導">運動指導</a></li><li class=""><a href="/map/" title="場地地圖">場地地圖</a></li><li class=""><a href="/panorama/" title="環景導覽">環景導覽</a></li><li class=""><a href="/news/" title="新訊公告">新訊公告</a></li><li class=""><a href="/document/" title="文件專區">文件專區</a></li><li class="Top"><a href="/member/" title="會員專區">會員專區</a></li><li class="Top"><a href="/sitemap/" title="網站導覽">網站導覽</a></li><li class="Top"><a href="https://forms.gle/GWMhRSMSHpD2LSmf9" target="_blank" rel="noopener noreferrer" title="意見回饋(另開新視窗)">意見回饋</a></li></ul>
+	</div>
+	<div class="BMLeft">
+		<div class="T"><a href="#Accesskey_Z" id="Accesskey_Z" accesskey="Z" title="下方選單連結區，此區塊列有地址及服務電話的網頁內容">:::</a>國立臺灣大學 - 體育館及戶外場地租借系統</div>
+		<div class="C">
+			<div>10617 臺北市羅斯福路四段一號</div>
+			<div>綜合體育館總機：02-3366-5959　傳真號碼：02-3366-9519</div>
+			<div>綜合體育館開放時間：週一~週五8:00~22:00、週六9:00~22:00、週日9:00~18:00<br />櫃台停止收銀作業時間、健身中心與溫水泳池清場時間為上述閉館時間前30分鐘<br />每個月第四個星期一為健身中心及溫水泳池休館日，17:00後開放</div>
+		</div>
+	</div>
+	<div class="BMRight">
+		<div class="A">
+			<div class="I">
+				<div id="twcaseal" class="SMALL"><img src="/__/i/newSMALL.png" alt="TWCA憑證" /></div>
+				<script type="text/javascript" charset="utf-8" >var twca_cn="rent.pe.ntu.edu.tw";</script>
+				<script type="text/javascript" src="//ssllogo.twca.com.tw/v4/twcaseal_v4.js" charset="utf-8"></script>
+			</div>
+			<div class="I">
+				<a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20251223212347" target="_blank" rel="noopener noreferrer" title="無障礙網站(另開新視窗)"><img src="/__/i/A.jpg" border="0" alt="通過A無障礙網頁檢測"></a>
+			</div>
+		</div>
+		<div class="Copyright">Copyright © 2021 國立臺灣大學</div>
+	</div>
+</div>
+<a href="javascript:void(0);" id="ScrollTop" role="button" class="Transition" title="移至最頂"><span class="material-icons">expand_less</span></a></div>
+</div>
+
+    </body>
+</html>
+<script src="https://rent.pe.ntu.edu.tw/_/j/mj.php?1793276427"></script>
+<script src="https://rent.pe.ntu.edu.tw/_/j/xhr.php?1793276427"></script>
+
+
+
+			<script>
+				var ShowLightbox = '0';
+				if( ShowLightbox != 0 ) {
+					var LinghtboxObj = LinghtboxDiv( 500, 220 );
+					LinghtboxObj.innerHTML = '<a href="javascript:void(0);" title="關閉" style="position: absolute; top: 10px; right: 10px; z-index: 10; border-radius: 50%; background-color: #EEE; padding: 5px;" onclick="CloseHomeLightbox();"><span class="material-icons" style="color: #000; font-size: 24px; cursor: pointer;">close</span></a><div style="padding: 15px"><h2 style="color: #0d6e86; font-weight: bolder;">公告</h2><br /><p style="line-height: 27px;">配合 115 年城鎮韌性（防空）演習，115 年 8 月 13 日（四）14 時 30 分至 15 時行動網路（4G、5G）可能降速或部分服務受影響，系統使用可能出現連線延遲或存取速度緩慢等情形，造成不便，敬請見諒。</p></div>';
+
+					document.getElementById( 'overlayId' ).onclick = function() {
+						CloseHomeLightbox();
+					}
+				}
+
+				async function CloseHomeLightbox() {
+
+					let FD = new FormData();
+					FD.append( 'Fun', 'CloseHomeLightbox' );
+
+					let Headers = {
+						'Accept': 'application/json'
+					};
+
+					let R = await fetch( '/__/f/ajax.php', {
+						method: 'POST',
+						headers: Headers,
+						body: FD,
+						cache: 'no-cache'
+					});
+					CloseLightbox();
+				}
+			</script>
+			<!-- script src="/__/j/flipsnap.js"></script -->
+			<!-- script>
+				var M;
+				function HomeMarqueeLoad() {
+					M = new MarqueeFun({
+						ImageID : 'HomeMarquee',
+						ImageMainID : 'HomeMarqueeMain',
+						PageNum : 0,
+						DfWidth : 1920,
+						DfHeight : 600,
+						T:'Ad',
+						Mq:'Y',
+					});
+
+					M.SetResize();
+					M.Set();
+					M.StartMove();
+				}
+
+				function HomeMarqueeResize() {
+					M.SetResize();
+					M.SetInfo({});
+				}
+
+				LoadFunAry.push( HomeMarqueeLoad );
+				ResizeFunAry.push( HomeMarqueeResize );
+
+			</script -->
+			
