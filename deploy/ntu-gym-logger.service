@@ -1,0 +1,11 @@
+# Fallback if GitHub runners can't reach the site. Adjust paths, then:
+#   cp deploy/ntu-gym-logger.* ~/.config/systemd/user/
+#   systemctl --user daemon-reload && systemctl --user enable --now ntu-gym-logger.timer
+#   loginctl enable-linger $USER   # keep running while logged out
+[Unit]
+Description=Log NTU gym crowd
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/NTU-gym-logger
+ExecStart=%h/NTU-gym-logger/deploy/run.sh

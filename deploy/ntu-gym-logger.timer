@@ -1,0 +1,11 @@
+[Unit]
+Description=Log NTU gym crowd every 10 min during opening hours
+
+[Timer]
+OnCalendar=Mon..Fri *-*-* 08..21:00/10:00 Asia/Taipei
+OnCalendar=Sat *-*-* 09..21:00/10:00 Asia/Taipei
+OnCalendar=Sun *-*-* 09..17:00/10:00 Asia/Taipei
+Persistent=false
+
+[Install]
+WantedBy=timers.target
