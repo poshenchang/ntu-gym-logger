@@ -1,0 +1,13 @@
+from heatmap import aggregate, render
+
+
+def test_aggregate_and_render():
+    rows = [
+        {"site_updated_at": "2026-10-29 20:20", "venue": "健身中心", "count": "30", "optimal": "80"},
+        {"site_updated_at": "2026-10-29 20:10", "venue": "健身中心", "count": "50", "optimal": "80"},
+    ]
+    agg = aggregate(rows)
+    assert agg["健身中心"][(3, "20:00")] == (40, 80, 2)
+    page = render(rows)
+    assert "median 40 / optimal 80 (2 samples)" in page
+    assert "<script" not in page
