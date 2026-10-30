@@ -1,13 +1,8 @@
 name: log
 
 on:
-  # Opening hours in Asia/Taipei (UTC+8), expressed in UTC:
-  #   Mon–Fri 08:00–22:00 -> 00:00–14:00, Sat 09:00–22:00 -> 01:00–14:00, Sun 09:00–18:00 -> 01:00–10:00
-  # Offset from :00 because GitHub drops scheduled runs most often at the top of the hour.
-  schedule:
-    - cron: "3-59/10 0-13 * * 1-5"
-    - cron: "3-59/10 1-13 * * 6"
-    - cron: "3-59/10 1-9 * * 0"
+  # Started every 10 min during opening hours by an external cron service (cron-job.org)
+  # calling the workflow_dispatch API; GitHub's own schedule: trigger never fired reliably.
   workflow_dispatch:
 
 permissions:

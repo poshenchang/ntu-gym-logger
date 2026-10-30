@@ -12,9 +12,10 @@ python -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python heatmap.py  # data.csv -> docs/index.html
 ```
 
-- **Collection:** `.github/workflows/log.yml` runs on cron (UTC times for Taipei opening
-  hours) and commits `data.csv` + `docs/index.html`. Trigger it manually first via
-  *Actions → log → Run workflow* to confirm runners can reach the site.
+- **Collection:** `.github/workflows/log.yml` fetches and commits `data.csv` +
+  `docs/index.html`. It is started every 10 min during opening hours (Taipei time) by
+  cron-job.org calling GitHub's `workflow_dispatch` API with a fine-grained token
+  (Actions: read and write, this repo only). Run it by hand via *Actions → log → Run workflow*.
 - **Fallback:** if runners are blocked, use the systemd user timer in `deploy/`.
 - **Heatmap:** enable GitHub Pages from the `main` branch, `/docs` folder.
 
