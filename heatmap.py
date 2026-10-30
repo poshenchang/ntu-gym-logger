@@ -8,6 +8,8 @@ from datetime import datetime
 from pathlib import Path
 from statistics import median
 
+from check import opening_window
+
 DATA = Path(__file__).with_name("data.csv")
 OUT = Path(__file__).with_name("docs") / "index.html"
 VENUES = ("健身中心", "室內游泳池")
@@ -21,6 +23,9 @@ def aggregate(rows):
     buckets = defaultdict(lambda: defaultdict(list))
     for r in rows:
         t = datetime.strptime(r["site_updated_at"], "%Y-%m-%d %H:%M")
+        lo, hi = opening_window(t.date())
+        if not lo <= t < hi:
+            continue
         slot = f"{t.hour:02d}:{30 if t.minute >= 30 else 0:02d}"
         buckets[r["venue"]][(t.weekday(), slot)].append((int(r["count"]), int(r["optimal"])))
     return {
