@@ -1,12 +1,14 @@
 name: log
 
 on:
-  # Started every 10 min during opening hours by an external cron service (cron-job.org)
-  # calling the workflow_dispatch API; GitHub's own schedule: trigger never fired reliably.
+  # Started every 10 min by an external cron service (cron-job.org) calling the
+  # workflow_dispatch API; GitHub's own schedule: trigger never fired reliably.
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: log
@@ -16,6 +18,8 @@ jobs:
   log:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,6 +34,7 @@ jobs:
       - run: python log.py
       - run: python heatmap.py
       - name: Commit data
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
@@ -38,3 +43,22 @@ jobs:
           git commit -m "data: $(TZ=Asia/Taipei date '+%F %H:%M')"
           git pull --rebase --quiet
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - if: steps.commit.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  # Pages is deployed from here (Settings → Pages → Source: GitHub Actions) rather than
+  # from the branch, so the concurrency group keeps deploys from overlapping.
+  deploy:
+    needs: log
+    if: needs.log.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

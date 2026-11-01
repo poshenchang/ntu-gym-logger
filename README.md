@@ -17,7 +17,7 @@ python -m venv .venv && .venv/bin/pip install -r requirements.txt
   cron-job.org calling GitHub's `workflow_dispatch` API with a fine-grained token
   (Actions: read and write, this repo only). Run it by hand via *Actions → log → Run workflow*.
 - **Fallback:** if runners are blocked, use the systemd user timer in `deploy/`.
-- **Heatmap:** enable GitHub Pages from the `main` branch, `/docs` folder.
+- **Heatmap:** deployed to GitHub Pages by the same workflow (Settings → Pages → Source: GitHub Actions).
 
 All times are Asia/Taipei. `check.py` knows the fourth-Monday closure (open from 17:00)
 but not public holidays, so expect gap reports on those days.
